@@ -24,12 +24,19 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: echo Configure AWS Credentials now!!
+      run: echo Configure AWS Credentials below!!
 
-    # Runs a single command using the runners shell
-    - name: Configure AWS Credentials
+    #- uses: actions/checkout@v1
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Deploy static site to S3 bucket
+        run: aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }}/ --delete --exclude ".git*"
+
+      # - name: Invalidate CloudFront cache
+      #   run: aws cloudfront create-invalidation --distribution-id E11QW2ELY79F85 --paths "/*"
+
