@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Resume - Start Bootstrap Theme</title>
+        <title>Sudha Chandran's Resume</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
@@ -14,12 +14,16 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="js/counter.js"></script>
+        <script>
+            updateCounter();
+        </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Clarence Taylor</span>
+                <span class="d-block d-lg-none">Sudha Chandran</span>
                 <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="" /></span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -30,7 +34,15 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#sideprojects">Side Projects</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+                    <li class="nav-item">
+                        <small class="nav-link justify-content-center align-items-center">
+                            <span data-toggle="tooltip" data-placement="bottom"><i class="fas fa-eye"></i>
+                              Visits: <span id="counter">0</span>
+                            </span>
+                        </small>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -47,9 +59,9 @@
                         Bangalore, Karnataka, India · (+91) 8861100855 ·
                         <a href="mailto:sudhachandran1bc@gmail.com">sudhachandran1bc@gmail.com</a>
                     </div>
-                    <p class="lead mb-5"> iOS Engineer | Cloud Enthusiast </p>
-                        <p class="lead mb-5">   iOS mobile engineer with 10+ years experience developing robust code for high-volume businesses. And
-                        Cloud Enthusiast currently persuing #100DaysOfCloud Challenge by passion for cloud.</p>
+                    <p class="lead mb-5"> iOS Engineer | Cloud Aspirant </p>
+                        <p class="lead mb-5">   iOS mobile engineer with 10+ years experience in developing robust code for high-volume businesses. And
+                        Cloud Aspirant currently persuing #100DaysOfCloud and #CloudResumeChallenge for passion of cloud.</p>
                     <div class="social-icons">
                         <a class="social-icon" href="https://www.linkedin.com/in/sudha-chandran-2882b03a/"><i class="fab fa-linkedin-in"></i></a>
                         <a class="social-icon" href="https://github.com/SudhaChandranBC"><i class="fab fa-github"></i></a>
@@ -143,7 +155,7 @@
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Hands On on React Native, Flutter
+                            Hands on experience on React Native, Flutter
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
@@ -166,6 +178,18 @@
                     <p class="mb-0">I enjoy developing small projects to show case my learnings. </p>
                     <p class="mb-0">Currently participating in #100DaysOfCloud online challenge.</p>
                     <p class="mb-0">Currently working on #CloudResumeChallenge.</p>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Side Projects-->
+            <section class="resume-section" id="sideprojects">
+                <div class="resume-section-content">
+                    <h2 class="mb-5"><i class="far fa-star"></i> Side Projects</h2>
+                    <p>Cloud Resume Challenge
+                        A cloud project to advance my career from https://cloudresumechallenge.dev. </p>
+                    <p class="mb-0">Uses S3, API Gateway, Lambda function, and DynamoDB. </p>
+                    <p class="mb-0">Integrated with GitHub Actions to make continuous integration and deployment, or CI/CD. </p>
+                    <p class="mb-0">Here is my blog post regarding this project. </p>
                 </div>
             </section>
             <hr class="m-0" />
