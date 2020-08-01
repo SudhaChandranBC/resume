@@ -1,5 +1,5 @@
 function updateCounter(){
-    fetch("https://w0fn1g5qmk.execute-api.us-west-2.amazonaws.com/Prod/visitor-count/")
+    fetch("https://9lxs0rml3c.execute-api.us-west-2.amazonaws.com/Prod/visitor-count/")
       .then(response => response.text())
       .then((body) => {
         var obj = JSON.parse(body);
