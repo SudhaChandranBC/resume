@@ -7,9 +7,6 @@ name: CI
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-    - ".git/**"
-    - ".github/**"
   pull_request:
     branches: [ master ]
 
