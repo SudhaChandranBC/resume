@@ -11,20 +11,6 @@ on:
     branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@master
-#     - uses: jakejarvis/s3-sync-action@master
-#       with:
-#         args: --acl public-read --follow-symlinks --delete
-#       env:
-#         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-#         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#         AWS_REGION: ${{ secrets.AWS_REGION }}
-#         SOURCE_DIR: 'public' 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -38,3 +24,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }} --delete
+      - name: Invalidate CloudFront cache for site
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_1 }} --paths "/"
+      - name: Invalidate CloudFront cache for www
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_2 }} --paths "/"
