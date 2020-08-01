@@ -23,7 +23,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy app build to S3 bucket
-        run: aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude '.git/*'
+        run: aws s3 sync ./assets s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude '.git/*'
+        run: aws s3 sync ./css s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude '.git/*'
+        run: aws s3 sync ./js s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude '.git/*'
+        run: aws s3 sync ./README.md s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude '.git/*'
+        run: aws s3 sync ./index.html s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude '.git/*'
       - name: Invalidate CloudFront cache for site
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_1 }} --paths "/"
       - name: Invalidate CloudFront cache for www
